@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin | Dashboard</title>
+    <!-- <link rel="stylesheet" href="output.css"> -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Font of the web (poppins) -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        body{
+            background-color: aliceblue;
+        }
+    </style>
+</head>
+<body class=" font-poppins w-full h-screen ">
+    
+    <div class="flex flex-row flex-wrap w-full h-screen ">
+        <!-- DIV for left side menu bar -->
+        <div class="menu flex flex-col justify-around w-1/5 p-[13px] bg-white">
+            <!-- logo -->
+            <div class="logo flex mb-[18px]">
+                <img src="{{ url_for('static' , filename='images/Left side icons/setting 1.png') }}" alt="Logo Image" class="w-[24px]">
+                <h1>Dashboard <span>v.1.0</span></h1>
+            </div>
+            <!-- menu bars -->
+            <div class="menubar space-y-[15px]">
+                <!-- dashboard -->
+                <div class="flex space-x-[5px]">
+                    <img src="{{ url_for('static' , filename='images/Left side icons/key-square.png') }}" alt="Description of the image" class="w-[24px] h-[] ">
+                    <p class="m-0"><button><a href="{{ url_for('home') }}" class="hover:text-[#C8102E]">Dashboard</a></button></p>
+                </div>
+                <!-- Products -->
+                <div class="flex space-x-[5px]">
+                    <img src="{{ url_for('static' , filename='images/Left side icons/List Menu.png') }}" alt="Description of the image" class="w-[24px] h-[]  ">
+                    <p class="m-0"><button><a href="{{ url_for('home') }}" class="hover:text-[#C8102E]">Products</a></button></p>
+                    <span class="text-2xl mt-[7px] "><img src="./Left side icons/Vector.png" alt="" class="ml-[110px]"></span>
+                </div>
+                <!-- Customers -->
+                <div class="flex space-x-[5px] bg-[#5932EA]">
+                    <img src="{{ url_for('static' , filename='images/Left side icons/List Menu-1.png') }}" alt="Description of the image" class="w-[24px] h-[]">
+                    <p class="m-0"><button><a href="{{ url_for('home') }}" class="hover:text-[#C8102E]">Customers</a></button></p>
+                    <span class="text-2xl mt-[7px] "><img src="./Left side icons/Vector.png" alt="" class="ml-[97px]"></span>
+                </div>
+                <!-- Income -->
+                <div class="flex space-x-[5px]">
+                    <img src="{{ url_for('static' , filename='images/Left side icons/List Menu-2.png') }}" alt="Description of the image" class="w-[24px] h-[]  ">
+                    <p class="m-0"><button><a href="{{ url_for('home') }}" class="hover:text-[#C8102E]">Income</a></button></p>
+                    <span class="text-2xl mt-[7px] "><img src="./Left side icons/Vector.png" alt="" class="ml-[120px]"></span>
+                </div>
+                <!-- Promote -->
+                <div class="flex space-x-[5px]">
+                    <img src="{{ url_for('static' , filename='images/Left side icons/List Menu-3.png') }}" alt="Description of the image" class="w-[24px] h-[]  ">
+                    <p class="m-0"><button><a href="{{ url_for('home') }}" class="hover:text-[#C8102E]">Promote</a></button></p>
+                    <span class="text-2xl mt-[7px] "><img src="./Left side icons/Vector.png" alt="" class="ml-[113px]"></span>
+                </div>
+                <!-- Help -->
+                <div class="flex space-x-[5px]">
+                    <img src="{{ url_for('static' , filename='images/Left side icons/List Menu-4.png') }}" alt="Description of the image" class="w-[24px] h-[]  ">
+                    <p class="m-0"><button><a href="{{ url_for('home') }}" class="hover:text-[#C8102E]">help</a></button></p>
+                    <span class="text-2xl mt-[7px] "><img src="./Left side icons/Vector.png" alt="" class="ml-[140px]"></span>
+                </div> 
+            </div>
+            <div>
+                <!-- The gradient colors -->
+                <div class="flex flex-col  flex-wrap-reverse items-center bg-gradient-to-r from-purple-500 to-blue-500 mt-[130px] h-[100px]">
+                    <h1 class=" flex flex-wraptext-[18px] text-white text-center font-semibold font-poppins">Upgrade to pro <br> To get all features</h1>
+                    <button class="  text-[#4925E9] bg-white text-center w-[110px] h-[30px] rounded-md">Get Pro Now!</button>
+                </div>
+                <!-- The Evano picture -->
+                <div class="flex space-x-[10px] mt-[45px]">
+                    <img class="w-[50px] h-[50px]" src="{{ url_for('static' , filename='images/Images/Ellipse 8.png') }}" alt="">
+                    <h1 class="text-black font-semibold font-sans text-[18px]">{{ admin_email }} <br><span class="text-slate-500">Project Manager</span></h1>
+                    <img class="h-[10px] mt-[13px] ml-[110px]" src="./Left side icons/Vector 5.png" alt="">
+                </div>
+            </div>
+        </div>
+
+
+
+        <!-- Div for right side web body -->
+        <div class="webBody flex-1 ml-[20px]">
+            <!-- Header -->
+            <div class="flex flex-row flex-wrap justify-between p-4 bg-white">
+                <div>
+                    <h1 class="mt-[10px] text-[25px] font-semibold">{{ admin_email }},</h1>
+                </div>
+                <div>
+                    <input type="text" placeholder="Search" class=" px-4 py-2 border rounded-lg focus:outline-none focus:ring-4 focus:ring-blue-600">
+                </div>
+            </div>
+
+            <div class="bg-white rounded-md">
+                <!-- The section of ratings for the customers -->
+                <div class=" customers flex justify-around flex-wrap bg-white mt-[20px] rounded-lg">
+                    <!-- first icon and details -->
+                    <div class="flex space-x-3">
+                        <img class="w-[60px] h-[60px] mt-[7px] border-collapse" src="{{ url_for('static' , filename='images/Riht side icons/profile-2user.png') }}" alt="">
+                        <div class="flex flex-col">
+                            <div>
+                                <h1 class="text-[15px] text-slate-500">Total Customers<br><span class="font-bold text-[18px] text-black">5,423</span></h1>
+                            </div>
+                            <div class="flex">
+                                <img class="w-[15px] h-[15px] mt-[4.5px]" src="{{ url_for('static' , filename='images/Riht side icons/arrow-up 1.png') }}" alt="">
+                                <p class="text-[15px] text-green-500">16% <span class="text-black">this month</span></p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- second icon and details -->
+
+                    <div class="flex space-x-3">
+                        <img class="w-[60px] h-[60px] mt-[7px] border-collapse" src="{{ url_for('static' , filename='images/Riht side icons/profile-tick.png') }}" alt="">
+                        <div class="flex flex-col">
+                            <div>
+                                <h1 class="text-[15px] text-slate-500">Members<br><span class="font-bold text-[18px] text-black">1,893</span></h1>
+                            </div>
+                            <div class="flex">
+                                <img class="w-[15px] h-[15px] mt-[4.5px]" src="{{ url_for('static' , filename='images/Riht side icons/arrow-DOWN.png') }}" alt="">
+                                <p class="text-[15px] text-red-500">1% <span class="text-black">this month</span></p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Third icon and details -->
+
+                    <div class="flex space-x-3">
+                        <img class="w-[60px] h-[60px] mt-[7px] border-collapse" src="{{ url_for('static' , filename='images/Riht side icons/monitor.png') }}" alt="">
+                        <div class="flex flex-col">
+                            <div>
+                                <h1 class="text-[15px] text-slate-500">Active Members<br><span class="font-bold text-[18px] text-black">189</span></h1>
+                            </div>
+                            <div class="flex space-x-[-5px]">
+                                <img class="w-[19px] h-[18px] mt-[4.5px]" src="{{ url_for('static' , filename='images/Images/Ellipse 58.png') }}" alt="">
+                                <img class="w-[19px] h-[18px] mt-[4.5px]" src="{{ url_for('static' , filename='images/Images/Ellipse 59.png') }}" alt="">
+                                <img class="w-[19px] h-[18px] mt-[4.5px]" src="{{ url_for('static' , filename='images/Images/Ellipse 60.png') }}" alt="">
+                                <img class="w-[19px] h-[18px] mt-[4.5px]" src="{{ url_for('static' , filename='images/Images/Ellipse 61.png') }}" alt="">
+                                <img class="w-[19px] h-[18px] mt-[4.5px]" src="{{ url_for('static' , filename='images/Images/Ellipse 62.png') }}" alt="">
+                            </div>
+                        </div>
+                    </div>
+
+
+                </div>
+
+
+                <!-- Last section -->
+                
+                <!-- first div -->
+                <div class="flex flex-wrap justify-between  mt-[30px] ">
+                    <h1 class="text-[18px] font-bold ml-[30px] ">All Customers <br><span class="text-green-400 text-[13px]">Active Members</span></h1>
+                  
+                    <div class="flex flex-wrap space-x-[6px] mt-[12px] mr-[50px]">
+                        <img class="w-[18px] h-[18px] mt-[4.3px] " src="{{ url_for('static' , filename='images/Riht side icons/Search 1.png') }}" alt="">
+                        <input type="text" placeholder="Search" class="h-7 rounded-md focus:ring-blue-600 ">
+                        <h1>Short by: <span class="text-black font-semibold ">Newest</span></h1>
+                        <img class="w-[8px] h-[8px] mt-[8.5px]" src="./Left side icons/Vector 5.png" alt="">
+                    </div>
+                </div>
+
+                <!-- Members Names section -->
+                <div class="flex flex-wrap flex-row justify-around space-x-5 mt-[16px]">
+                    <!-- Customer name -->
+                    <p>Customers to be added soon</p>
+
+                </div>
+                <!-- last scrollimg right or left -->
+                <div class=" flex justify-between ">
+                    <div class="ml-[20px] mt-[14px]">
+                        <p>Showing data 1 to 8 of 256K entries</p>
+                    </div>
+                    <div class="mr-[20px] mt-[14px]">
+                        <h1 class="space-x-[3px]">
+                            <span class="border px-2"><</span>
+                            <span class="border-gray-500 px-2">1</span>
+                            <span class="border px-2">2</span>
+                            <span class="border px-2">3</span>
+                            <span class="border px-2">4</span>
+                            <span class="border px-2">5</span>
+                            ...
+                            <span class="border px-2">40</span>
+                            <span class="border px-2">></span>
+                        </h1>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+       
+    </div>
+    
+</body>
+</html>

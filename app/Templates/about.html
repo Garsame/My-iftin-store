@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us - Iftin Store</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+    <!-- Icons (Font Awesome) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+</head>
+
+<body class="bg-white font-inter text-gray-800">
+
+    <!-- Header with Navbar -->
+    <header class="flex justify-around items-center p-6 bg-black text-white">
+        <!-- Logo -->
+        <div class="logo">
+            <h1 class="text-2xl font-bold mr-[180px]">Iftin Store</h1>
+        </div>
+        <!-- Navbar -->
+        <nav class="flex space-x-6 ">
+            <a href="{{ url_for('home') }}" class="hover:text-[#C8102E]">Home</a>
+            <a href="{{ url_for('about') }}" class="hover:text-[#C8102E]">About</a>
+            <a href="{{ url_for('contact') }}" class="hover:text-[#C8102E]">Contact</a>
+            
+        </nav>
+        <nav class="flex space-x-4">
+            <a href="{{ url_for('index') }}" class="hover:text-[#C8102E]">Login</a>
+            <a href="{{ url_for('signup') }}" class="hover:text-[#C8102E]">Sign-up</a>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class=" text-black py-20">
+        <div class="container mx-auto text-center">
+            <h2 class="text-4xl font-semibold">About Iftin Store</h2>
+            <p class="mt-4 text-lg">Discover our journey in bringing premium fashion and sportswear to you <br> For more info visit our <span class="text-red-400"><a href="{{ url_for('contact') }}"class="hover:text-[#A50018]" >Contacts Page</a></span> or come to our stores.</p>
+        </div>
+    </section>
+
+    <!-- Vision and Mission Section -->
+    <section class="py-16 bg-gray-50">
+        <div class="container  px-6  flex flex-col">
+            <div class="flex justify-around   md:flex-row ">
+                <!-- Vision -->
+                <div class="bg-[#C8102E] rounded-md text-white  space-y-7 h-[240px]">
+                    <h3 class="text-3xl font-bold  ml-4 ">Our Vision</h3>
+                    <p class="text-start text-gray-200   mt-4  ml-4 w-[500px]">At <span class="text-[]">IFTIN STORE </span>, our vision is to be a leading online destination for
+                        timeless fashion and modern sportswear. We strive to combine tradition and innovation, offering our
+                        customers top-quality products that stand the test of time and trends.</p>
+                    <button class="w-[140px] h-[45px]  ml-4 mt-4  bg-black rounded-md  items-start   "><a href="" class="hover:text-[#A50018]">Read more...</a></button>
+                </div>
+                <!-- Mision -->
+                <div class="bg-[#C8102E] rounded-md text-white h-[240px]">
+                    <h3 class="text-3xl font-bold ml-4 text-black">Our Mission</h3>
+                    <p class="text-start text-gray-200   mt-4  ml-4 w-[500px]">Our mission is to make premium fashion accessible to all, providing a
+                        seamless shopping experience with an extensive collection of carefully curated clothing and
+                        accessories. We are committed to delivering excellent service and ensuring that our customers feel
+                        both stylish and confident in every purchase they make.</p>
+                        <button class="w-[140px] h-[45px]  ml-4 mt-4  bg-black rounded-md  items-start   "><a href="" class="hover:text-[#A50018]">Read more...</a></button>
+                </div>
+                
+            </div>
+        </div>
+    </section>
+
+    <!-- Image and Text Section -->
+    <section class="py-16 bg-white">
+        <div class="container mx-auto px-6">
+            <div class="flex flex-col md:flex-row gap-12 justify-around items-center">
+                <!-- Image Section -->
+                <div>
+                    <img src="{{ url_for('static', filename='./images/images.jpeg') }}" alt="Building Websites"
+                        class="rounded-md shadow-md w-[470px] h-[340px]">
+                </div>
+                <!-- Text Section -->
+                <div>
+                    <h3 class="text-3xl font-bold text-black">Who We Are</h3>
+                    <p class="mt-4 text-gray-600 w-[400px]">We are a team of fashion enthusiasts who specialize in providing
+                        stylish, high-quality apparel and sportswear. Our aim is to empower individuals to express themselves
+                        through our versatile collections, whether they're dressing for business, leisure, or fitness.</p>
+                    <!-- Features -->
+                    <div class="mt-6 space-y-4">
+                        <div class="flex items-center">
+                            <i class="fas fa-check-circle text-[#C8102E] text-xl"></i>
+                            <p class="ml-3 text-gray-700">Top-tier customer service</p>
+                        </div>
+                        <div class="flex items-center">
+                            <i class="fas fa-check-circle text-[#C8102E] text-xl"></i>
+                            <p class="ml-3 text-gray-700">Exclusive collections and styles</p>
+                        </div>
+                        <div class="flex items-center">
+                            <i class="fas fa-check-circle text-[#C8102E] text-xl"></i>
+                            <p class="ml-3 text-gray-700">Fast and reliable shipping</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-black text-white py-12">
+        <div class="container mx-auto grid grid-cols-1 md:grid-cols-4 gap-8">
+
+            <!-- Logo and Description -->
+            <div>
+                <h1 class="text-2xl font-bold">Iftin Store</h1>
+                <p class="mt-4 text-gray-400">Your one-stop destination for stylish clothing and sportswear.</p>
+            </div>
+
+            <!-- Collections Links -->
+            <div>
+                <h3 class="font-semibold text-lg mb-4">Our Collections</h3>
+                <ul class="space-y-2">
+                    <li><a href="/shirts" class="hover:text-[#C8102E]">Shirts</a></li>
+                    <li><a href="/trousers" class="hover:text-[#C8102E]">Trousers</a></li>
+                    <li><a href="/sportswear" class="hover:text-[#C8102E]">Sportswear</a></li>
+                    <li><a href="/accessories" class="hover:text-[#C8102E]">Accessories</a></li>
+                </ul>
+            </div>
+
+            <!-- Useful Links -->
+            <div>
+                <h3 class="font-semibold text-lg mb-4">Useful Links</h3>
+                <ul class="space-y-2">
+                    <li><a href="/about" class="hover:text-[#C8102E]">About Us</a></li>
+                    <li><a href="/contact" class="hover:text-[#C8102E]">Contact</a></li>
+                    <li><a href="/login" class="hover:text-[#C8102E]">Login</a></li>
+                    <li><a href="/signup" class="hover:text-[#C8102E]">Sign Up</a></li>
+                </ul>
+            </div>
+
+            <!-- Social Media Links -->
+            <div>
+                <h3 class="font-semibold text-lg mb-4">Follow Us</h3>
+                <div class="flex space-x-4">
+                    <a href="#" class="hover:text-[#C8102E]"><i class="fab fa-facebook-f text-xl"></i></a>
+                    <a href="#" class="hover:text-[#C8102E]"><i class="fab fa-twitter text-xl"></i></a>
+                    <a href="#" class="hover:text-[#C8102E]"><i class="fab fa-instagram text-xl"></i></a>
+                    <a href="#" class="hover:text-[#C8102E]"><i class="fab fa-linkedin-in text-xl"></i></a>
+                </div>
+            </div>
+        </div>
+
+        <div class="border-t border-gray-700 mt-8 pt-8 text-center text-gray-400">
+            <p>&copy; 2024 Iftin Store. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+</body>
+
+</html>

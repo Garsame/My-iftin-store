@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive Home</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script defer>
+        // Toggle function for navbar
+        function toggleMenu() {
+            const nav = document.getElementById('mobile-menu');
+            nav.classList.toggle('hidden');
+        }
+    </script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+</head>
+
+<body>
+    <!-- Hero Section -->
+    <div class="relative w-full bg-red-500  mb-[80px]">
+        <img class="w-full h-[500px] object-cover" src="{{ url_for('static', filename='./images/Store.jpeg') }}" alt="">
+
+        <!-- Overlay Content -->
+        <div class="absolute inset-0 flex flex-col justify-between p-4 text-white">
+            <!-- Header with Toggle -->
+            <header class="flex justify-around items-center py-4 px-6">
+                <!-- Logo -->
+                <div class="logo">
+                    <img src="{{ url_for('static', filename='./images/Iftin_store_logo-removebg-preview (1).png') }}" alt="Iftin Store" class="w-[120px] h-[70px]">
+                </div>
+                <!-- Menu Button for Small Screens -->
+                <button class="text-white block md:hidden" onclick="toggleMenu()">
+                    <i class="fa fa-bars"></i>
+                </button>
+                <!-- Navbar for Desktop -->
+                <nav class="hidden md:flex space-x-8 justify-around">
+                    <div class="space-x-8">
+
+                    
+                        <a href="{{ url_for('home') }}" class="text-[#C8102E] hover:text-white">Home</a>
+                        <a href="{{ url_for('about') }}" class="text-[#C8102E] hover:text-white">About</a>
+                        <a href="{{ url_for('contact') }}" class="text-[#C8102E] hover:text-white">Contact</a>
+                    </div>
+                    <div class="space-x-8">
+                        <a href="{{ url_for('index') }}" class="text-[#C8102E] hover:text-white">Login</a>
+                        <a href="{{ url_for('signup') }}" class="text-[#C8102E] hover:text-white">Sign-up</a>
+                    </div>
+                </nav>
+            </header>
+
+            <!-- Mobile Menu -->
+            <nav id="mobile-menu" class="hidden md:hidden flex-col items-center text-center space-y-4 text-xl bg-black bg-opacity-75 p-6 absolute w-full">
+                <a href="{{ url_for('home') }}" class="text-white hover:text-[#C8102E]">Home</a>
+                <a href="{{ url_for('about') }}" class="text-white hover:text-[#C8102E]">About</a>
+                <a href="{{ url_for('contact') }}" class="text-white hover:text-[#C8102E]">Contact</a>
+                <a href="{{ url_for('index') }}" class="text-white hover:text-[#C8102E]">Login</a>
+                <a href="{{ url_for('signup') }}" class="text-white hover:text-[#C8102E]">Sign-up</a>
+            </nav>
+
+            <!-- Section One -->
+            <div class="flex flex-col items-center text-center mb-[200px]  md:mt-20">
+                <h4 class="text-green-400 text-sm md:text-lg">Welcome with open service</h4>
+                <h1 class="text-2xl md:text-4xl font-bold">You are at the right place <br> We make your shopping destination the best!</h1>
+            </div>
+
+            <!-- White space content (Location and Date Selection) -->
+            <!-- <div class="bg-white text-black  w-[700px]  flex flex-col md:flex-row justify-center items-center  ml-[24%] md:ml-0 flex-wrap  p-4 rounded-md mt-8 space-y-4 md:space-y-0 md:space-x-4">
+                <div class="locationIcon flex items-center space-x-2">
+                    <i class="fa-solid fa-location-dot"></i>
+                    <button>Select location</button>
+                    <i class="fa-solid fa-chevron-down"></i>
+                </div>
+                <div class="dateIcon flex items-center space-x-2">
+                    <i class="fa-solid fa-calendar-days"></i>
+                    <button>Select Date</button>
+                    <i class="fa-solid fa-chevron-down"></i>
+                </div>
+                <button class="bg-[#C8102E] text-white px-4 py-2 rounded-md">Search Place</button>
+            </div> -->
+        </div>
+    </div>
+    
+    <!-- Section One: Text on the left, Image on the right -->
+    <div class="flex justify-around flex-wrap   mt-[150px]  space-x-6">
+        <div class=" ">
+            <img src="{{ url_for('static', filename='./images/images3.jpeg') }}" alt="Placeholder" class="[500px] h-[400px]  rounded-md ml[160px]  md:w-[450px] ">
+        </div>
+        <div class=" space-y-6 ">
+            <h4 class="text-green-400 text-xs">YOUR FASHION DESTINATION</h4>
+            <h1 class="text-3xl font-bold ">Discover Unique Styles<br>At Iftin Store</h1>
+            <p class="text-2xl font-monospace w-[480px]   ">Elevate your style with our latest addition to the Iftin Store collection—the Elegant Fusion Full men wear. Crafted with premium materials and designed for both functionality and flair, this handbag is perfect for the modern man on the go.</p>
+            <button class="bg-blue-500 w-[110px] h-[50px] rounded-md mt-[60px]   ">Explore More...</button>
+        </div>
+    </div>
+
+
+    <!-- Footer -->
+    <footer class="bg-black text-white py-8 mt-12">
+        <div class="container mx-auto flex flex-col md:flex-row justify-around items-start md:space-x-12 space-y-8 md:space-y-0">
+            <!-- Logo and Description -->
+            <div class="space-y-4">
+                <img src="{{ url_for('static', filename='./images/Iftin_store_logo-removebg-preview (1).png') }}" alt="Iftin Store" class="w-[140px] h-[60px]">
+                <p class="text-gray-400">Your one-stop destination for stylish men and women clothing <br> and sportswear.</p>
+            </div>
+
+            <!-- Useful Links -->
+            <div class="col-span-1">
+                <h3 class="font-semibold text-lg mb-4">Useful Links</h3>
+                <ul class="space-y-2">
+                    <li><a href="/about" class="hover:text-[#C8102E]">About Us</a></li>
+                    <li><a href="/contact" class="hover:text-[#C8102E]">Contact</a></li>
+                    <li><a href="/login" class="hover:text-[#C8102E]">Login</a></li>
+                    <li><a href="/signup" class="hover:text-[#C8102E]">Sign Up</a></li>
+                </ul>
+            </div>
+            <!-- Our Collections -->
+            <div class="space-y-4">
+                <h3 class="text-lg font-semibold">Our Collections</h3>
+                <ul class="space-y-2">
+                    <li><a href="/shirts" class="hover:text-[#C8102E]">Shirts</a></li>
+                    <li><a href="/trousers" class="hover:text-[#C8102E]">Trousers</a></li>
+                    <li><a href="/sportswear" class="hover:text-[#C8102E]">Sportswear</a></li>
+                    <li><a href="/accessories" class="hover:text-[#C8102E]">Accessories</a></li>
+                </ul>
+            </div>
+            <!-- Social Links -->
+            <div class="space-y-4">
+                <h3 class="text-lg font-semibold">Follow Us</h3>
+                <div class="flex space-x-4">
+                    <a href="#" class="hover:text-[#C8102E]"><i class="fab fa-facebook"></i></a>
+                    <a href="#" class="hover:text-[#C8102E]"><i class="fab fa-twitter"></i></a>
+                    <a href="#" class="hover:text-[#C8102E]"><i class="fab fa-instagram"></i></a>
+                    <a href="#" class="hover:text-[#C8102E]"><i class="fab fa-linkedin"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="border-t border-gray-700 mt-8 text-center text-gray-400 py-4">
+            <p>&copy; 2024 Iftin Store. All Rights Reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>
