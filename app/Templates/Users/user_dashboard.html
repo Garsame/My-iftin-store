@@ -71,7 +71,7 @@
                 <!-- The Evano picture -->
                 <div class="flex space-x-[10px] mt-[45px]">
                     <img class="w-[50px] h-[50px]" src="{{ url_for('static' , filename='images/Images/Ellipse 8.png') }}" alt="">
-                    <h1 class="text-black font-semibold font-sans text-[18px]">{username}<br><span class="text-slate-500">Project Manager</span></h1>
+                    <h1 class="text-black font-semibold font-sans text-[18px]">{{ first_name }} {{ second_name }}<br><button ><a href="#"><span class="text-slate-500">Your profile</span></a></button></h1>
                     <img class="h-[10px] mt-[13px] ml-[110px]" src="./Left side icons/Vector 5.png" alt="">
                 </div>
             </div>
@@ -84,7 +84,7 @@
             <!-- Header -->
             <div class="flex flex-row flex-wrap justify-between p-4 bg-white">
                 <div>
-                    <h1 class="mt-[10px] text-[25px] font-semibold">Hello {Username },</h1>
+                    <h1 class="mt-[10px] text-[25px] font-semibold">Hello {{ first_name }} ,</h1>
                 </div>
                 <div>
                     <input type="text" placeholder="Search" class=" px-4 py-2 border rounded-lg focus:outline-none focus:ring-4 focus:ring-blue-600">
